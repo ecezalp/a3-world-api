@@ -24,10 +24,11 @@ ActiveRecord::Schema.define(version: 20161026181443) do
   end
 
   create_table "projects", force: :cascade do |t|
-    t.string "heroku_link"
+    t.string "resource_link"
     t.string "github_link"
     t.string "demo_link"
     t.string "title"
+    t.string "tagline"
     t.string "description"
   end
 
