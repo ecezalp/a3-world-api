@@ -7,38 +7,6 @@ class TextsController < ApplicationController
         @my_twilio_number = '+16463625090'
     end
 
-
-# app.post('/text', function(req, res){
-#     console.log(req.body)
-#     console.log(res)
-#     var myPhone = '+19173303815'
-#     var textMessage = req.body.message + " by " + req.body.name
-#     var texterPhone = function(req) {
-#         if (req.body.phoneNumber) {
-#             return "+1" + req.body.phoneNumber
-#         }
-#         else {
-#             return '+16463625090'
-#         }
-#     } 
-#     client.sendSms({
-#         to: myPhone,
-#         from: texterPhone,
-#         body: textMessage
-#     }, function(error, message) {
-#         if (!error) {
-#             console.log('Success! The SID for this SMS message is:');
-#             console.log(message.sid);
-#             console.log('Message sent on:');
-#             console.log(message.dateCreated);
-#         } else {
-#             console.log('Message couldnt be sent');
-#         }
-#     });
-# })
-
-
-
     def send_text
         setup_twilio
         @new_message_text = params["name"] + " sent you " + params["message"]
