@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     end
   end
 
+  post '/text', to: 'texts#send_text'
+
 
 
 
