@@ -1,69 +1,42 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
-Review.create(review: "
-
-<p style='text-align: left;'><span style='color: #000000;'>React provides</span> <span style='color: #ff0000;'>ReactTransitionGroup <span style='color: #000000;'>API (low level) for animation and <span style='color: #ff0000;'>ReactCSSTransitionGroup</span> API (high level) <span style='color: #000000;'>for implementing basic CSS animations.</span></span></span></p>
-<p style='text-align: left;'><span style='color: #000000;'>Quick note: A high level API is more friendly for the programmer for a quick integration, while a low level API is more detailed and more suitable for developing custom results.</span></p>
-<p style='text-align: left;'><span style='color: #ff0000;'>ReactCSSTransitionGroup<span style='color: #000000;'> is based on</span> ReactTransitionGroup</span> <span style='color: #000000;'>and it can be used to provide animations when an element enters or exits our virtual DOM. is inspired by Angular's API. <a href='http://www.nganimate.org/angularjs/ng-repeat/move'>examples</a></span></p>
-
-
-<hr />
-<p style='text-align: left;'><span style='color: #ff0000;'>ReactCSSTransitionGroup</span><span style='color: #000000;'> is<span style='color: #000000;'> required like this</span></span></p>
-<p style='text-align: left;'><img class='alignnone size-full wp-image-376' src='https://orientingobjects.files.wordpress.com/2016/09/screen-shot-2016-09-28-at-10-05-57-pm.png' alt='Screen Shot 2016-09-28 at 10.05.57 PM.png' width='589' height='20' /></p>
-<p style='text-align: left;'><span style='color: #000000;'>and it is used along with the HTML part of the JSX:</span></p>
-<p style='text-align: left;'><img class='alignnone size-full wp-image-369' src='https://orientingobjects.files.wordpress.com/2016/09/screen-shot-2016-09-28-at-10-02-14-pm.png' alt='screen-shot-2016-09-28-at-10-02-14-pm' width='586' height='209' /></p>
-<p style='text-align: left;'><span style='color: #000000;'>You can see how easy it is to use in the example above.</span><span style='color: #000000;'><span style='color: #ff0000;'>ReactCSSTransitionGroup <span style='color: #000000;'>simply wraps the items that are being rendered. transitionName, transitionEnterTimeout, and transitionLeaveTimeout are being shown in the example, with milliseconds passed in as their arguments.</span></span></span></p>
-
-
-<hr />
-<p style='text-align: left;'><span style='color: #000000;'>It is very important to note that each and any child of the</span> <span style='color: #ff0000;'>ReactCSSTransitionGroup <span style='color: #000000;'>must have <a href='https://facebook.github.io/react/docs/multiple-components.html#dynamic-children'>a key attribute</a> such as </span></span></p>
-<p style='text-align: left;'><span style='color: #000000;'><span style='color: #ff0000;'><span style='color: #000000;'><span style='color: #ff0000;'><span style='color: #000000;'> <li key='{cat.id}'>{cat.name}</li></span></span></span></span></span></p>
-<p style='text-align: left;'><span style='color: #000000;'><span style='color: #ff0000;'><span style='color: #000000;'><span style='color: #ff0000;'><span style='color: #000000;'>  The key is how <span style='color: #ff0000;'>ReactCSSTransitionGroup</span> can tell whether the child has entered, stayed, or exited. This holds true even if there is only a single child.</span></span></span></span></span></p>
-
-
-<hr />
-<p style='text-align: left;'><span style='color: #000000;'>Going back to our example above, what immediately follows</span><span style='color: #ff0000;'> ReactCSSTransitionGroup<span style='color: #000000;'> is transitionName, and the value that is passed to it will be retrieved from the CSS file associated with the code that is being rendered.  The CSS file looks like this, and as a part of the convention, the enter and leave properties are listed following the transitionName with a dash:</span></span></p>
-<p style='text-align: left;'><img class='alignnone size-full wp-image-402' src='https://orientingobjects.files.wordpress.com/2016/09/screen-shot-2016-09-28-at-10-16-43-pm.png' alt='Screen Shot 2016-09-28 at 10.16.43 PM.png' width='354' height='360' /></p>
-<p style='text-align: left;'><span style='color: #000000;'>You'll notice that animation durations need to be specified in both the CSS and the render method; this tells React when to remove the animation classes from the element and -- if it's leaving -- when to remove the element from the DOM.</span></p>
-
-
-<hr />
-<p style='text-align: left;'><span style='color: #000000;'>There is an optional prop that is offered by</span> <span style='color: #ff0000;'>ReactCSSTransitionGroup <span style='color: #000000;'>that is called transitionAppear which defaults to false. transitionAppear makes the children of <span style='color: #ff0000;'>ReactCSSTransitionGroup</span> appear on the page as long as specified, but they don't enter the DOM (unless they are later appended instead of originally shown). </span></span></p>
-<p style='text-align: left;'><img class='alignnone size-full wp-image-419' src='https://orientingobjects.files.wordpress.com/2016/09/screen-shot-2016-09-28-at-10-25-51-pm.png' alt='Screen Shot 2016-09-28 at 10.25.51 PM.png' width='398' height='227' /></p>
-<p style='text-align: left;'><span style='color: #000000;'>transitionAppear are associated with example-appear  of the CSS file given that the transitionName is 'example' again.</span></p>
-<p style='text-align: left;'><img class='alignnone size-full wp-image-426' src='https://orientingobjects.files.wordpress.com/2016/09/screen-shot-2016-09-28-at-10-30-44-pm.png' alt='Screen Shot 2016-09-28 at 10.30.44 PM.png' width='242' height='183' /></p>
-<p style='text-align: left;'><span style='color: #000000;'>It is also possible to customize transitionName by passing in an object with enter, leave, and appear keys. Unless otherwise specified, this would also create their active versions by automatically adding -active at the end of the custom names in the CSS file. </span></p>
-
-
-<hr />
-<p style='text-align: left;'><span style='color: #ff0000;'>ReactCSSTransitionGroup <span style='color: #000000;'>must be directly returned, must be explicit, on the DOM, otherwise it will not work. The following example WILL NOT WORK because <span style='color: #ff0000;'>ReactCSSTransitionGroup <span style='color: #000000;'>is inside a function that is being called but not directly on the DOM.</span></span></span></span></p>
-<p style='text-align: left;'><img class='alignnone size-full wp-image-437' src='https://orientingobjects.files.wordpress.com/2016/09/screen-shot-2016-09-28-at-10-36-06-pm.png' alt='Screen Shot 2016-09-28 at 10.36.06 PM.png' width='583' height='333' /></p>
-
-
-<hr />
-<p style='text-align: left;'><span style='color: #000000;'>Disabling animations is very easy. For using the enter animation only, transitionLeave can be set to false like this: transitionLeave={false}. Same holds true for transitionEnter{false}.</span></p>
-
-
-<hr />
-<p style='text-align: left;'><span style='color: #000000;'>When using</span> <span style='color: #ff0000;'>ReactCSSTransitionGroup</span><span style='color: #000000;'>, there is no way for the components to know when the animation starts or ends. For other complex logic that takes those in consideration,<span style='color: #ff0000;'> ReactTransitionGroup <span style='color: #000000;'>API must be used, which has hooks for custom transitions. I am pasting the <span style='color: #ff0000;'>ReactTransitionGroup</span> methods listed in the documentation here for the sake of convenience:</span></span></span></p>
-<p style='text-align: left;'><img class='alignnone size-full wp-image-451' src='https://orientingobjects.files.wordpress.com/2016/09/screen-shot-2016-09-28-at-10-47-09-pm.png' alt='Screen Shot 2016-09-28 at 10.47.09 PM.png' width='671' height='604' /></p>
-
-
-<hr />
-<p style='text-align: left;'><span style='color: #000000;'> <span style='color: #ff0000;'>ReactTransitionGroup <span style='color: #000000;'>renders a <span></span> by default, but it is possible to change this behavior by rendering a component prop. The following example is for a <ul> with a custom className for CSS:</span></span></span></p>
-<p style='text-align: left;'><img class='alignnone size-full wp-image-455' src='https://orientingobjects.files.wordpress.com/2016/09/screen-shot-2016-09-28-at-10-57-32-pm.png' alt='Screen Shot 2016-09-28 at 10.57.32 PM.png' width='510' height='73' /></p>
-<p style='text-align: left;'><span style='color: #000000;'>The component doesn't have to be a DOM component but it can also be something that we create --> 'Just write <code>component={List}</code> and your component will receive<code>this.props.children</code>.' I didn't exactly understand how this works but it seems to be worth a try. </span></p>
-
-
-<hr />,
-
-", resource_link: "https://facebook.github.io/react/", title: "React Docs - Animation", description: "React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.")
+Review.create(review: "<div>
+        <p style={{textAlign: 'left'}}><span style={{color: '#000000'}}>React provides</span> <span style={{color: '#ff0000'}}>ReactTransitionGroup&nbsp;<span style={{color: '#000000'}}>API (low level) for animation and&nbsp;<span style={{color: '#ff0000'}}>ReactCSSTransitionGroup</span>&nbsp;API (high level)&nbsp;<span style={{color: '#000000'}}>for implementing basic CSS animations.</span></span></span></p>
+        <p style={{textAlign: 'left'}}><span style={{color: '#000000'}}>Quick note: A high level API is more friendly for the programmer for a quick integration, while a low level API is more detailed and more suitable for developing custom results.</span></p>
+        <p style={{textAlign: 'left'}}><span style={{color: '#ff0000'}}>ReactCSSTransitionGroup<span style={{color: '#000000'}}> is based on</span>&nbsp;ReactTransitionGroup</span>&nbsp;<span style={{color: '#000000'}}>and it can be used to provide animations when an element enters or exits our virtual DOM.&nbsp;is inspired by Angular's API.&nbsp;<a href='http://www.nganimate.org/angularjs/ng-repeat/move'>examples</a></span></p>
+        <hr />
+        <p style={{textAlign: 'left'}}><span style={{color: '#ff0000'}}>ReactCSSTransitionGroup</span><span style={{color: '#000000'}}> is<span style={{color: '#000000'}}> required like this</span></span></p>
+        <p style={{textAlign: 'left'}}><img className='alignnone size-full wp-image-376' src='https://orientingobjects.files.wordpress.com/2016/09/screen-shot-2016-09-28-at-10-05-57-pm.png' alt='Screen Shot 2016-09-28 at 10.05.57 PM.png' width={589} height={20} /></p>
+        <p style={{textAlign: 'left'}}><span style={{color: '#000000'}}>and it is used along with the HTML part of the JSX:</span></p>
+        <p style={{textAlign: 'left'}}><img className='alignnone size-full wp-image-369' src='https://orientingobjects.files.wordpress.com/2016/09/screen-shot-2016-09-28-at-10-02-14-pm.png' alt='screen-shot-2016-09-28-at-10-02-14-pm' width={586} height={209} /></p>
+        <p style={{textAlign: 'left'}}><span style={{color: '#000000'}}>You can see how easy it is to use in the example above.</span><span style={{color: '#000000'}}><span style={{color: '#ff0000'}}>ReactCSSTransitionGroup&nbsp;<span style={{color: '#000000'}}>simply wraps the items that are being rendered. transitionName, transitionEnterTimeout, and transitionLeaveTimeout are being shown in the example, with milliseconds passed in as their arguments.</span></span></span></p>
+        <hr />
+        <p style={{textAlign: 'left'}}><span style={{color: '#000000'}}>It is very important to note that each and any child of the</span> <span style={{color: '#ff0000'}}>ReactCSSTransitionGroup&nbsp;<span style={{color: '#000000'}}>must have <a href='https://facebook.github.io/react/docs/multiple-components.html#dynamic-children'>a key attribute</a>&nbsp;such as&nbsp;</span></span></p>
+        <p style={{textAlign: 'left'}}><span style={{color: '#000000'}}><span style={{color: '#ff0000'}}><span style={{color: '#000000'}}><span style={{color: '#ff0000'}}><span style={{color: '#000000'}}>&nbsp;</span></span></span></span></span></p><li key='{cat.id}'>{'{'}cat.name{'}'}</li><p />
+        <p style={{textAlign: 'left'}}><span style={{color: '#000000'}}><span style={{color: '#ff0000'}}><span style={{color: '#000000'}}><span style={{color: '#ff0000'}}><span style={{color: '#000000'}}> &nbsp;The key is how <span style={{color: '#ff0000'}}>ReactCSSTransitionGroup</span> can tell whether the child has entered, stayed,&nbsp;or exited. This holds true even if there is only a single child.</span></span></span></span></span></p>
+        <hr />
+        <p style={{textAlign: 'left'}}><span style={{color: '#000000'}}>Going back to our example above, what immediately follows</span><span style={{color: '#ff0000'}}>&nbsp;ReactCSSTransitionGroup<span style={{color: '#000000'}}> is transitionName, and the value that is passed to it will be retrieved from the CSS file associated with the code that is being rendered. &nbsp;The CSS file looks like this, and as a part of the convention, the enter and leave properties are listed following the transitionName with a dash:</span></span></p>
+        <p style={{textAlign: 'left'}}><img className='alignnone size-full wp-image-402' src='https://orientingobjects.files.wordpress.com/2016/09/screen-shot-2016-09-28-at-10-16-43-pm.png' alt='Screen Shot 2016-09-28 at 10.16.43 PM.png' width={354} height={360} /></p>
+        <p style={{textAlign: 'left'}}><span style={{color: '#000000'}}>You'll notice that animation durations need to be specified in both the CSS and the render method; this tells React when to remove the animation classes from the element and -- if it's leaving -- when to remove the element from the DOM.</span></p>
+        <hr />
+        <p style={{textAlign: 'left'}}><span style={{color: '#000000'}}>There is an optional prop that is offered by</span>&nbsp;<span style={{color: '#ff0000'}}>ReactCSSTransitionGroup&nbsp;<span style={{color: '#000000'}}>that is called transitionAppear which defaults to false. transitionAppear makes the children of <span style={{color: '#ff0000'}}>ReactCSSTransitionGroup</span> appear on the page as long as specified, but they don't enter the DOM (unless they are later appended instead of originally shown).&nbsp;</span></span></p>
+        <p style={{textAlign: 'left'}}><img className='alignnone size-full wp-image-419' src='https://orientingobjects.files.wordpress.com/2016/09/screen-shot-2016-09-28-at-10-25-51-pm.png' alt='Screen Shot 2016-09-28 at 10.25.51 PM.png' width={398} height={227} /></p>
+        <p style={{textAlign: 'left'}}><span style={{color: '#000000'}}>transitionAppear are associated with example-appear &nbsp;of the CSS&nbsp;file&nbsp;given that the transitionName is 'example' again.</span></p>
+        <p style={{textAlign: 'left'}}><img className='alignnone size-full wp-image-426' src='https://orientingobjects.files.wordpress.com/2016/09/screen-shot-2016-09-28-at-10-30-44-pm.png' alt='Screen Shot 2016-09-28 at 10.30.44 PM.png' width={242} height={183} /></p>
+        <p style={{textAlign: 'left'}}><span style={{color: '#000000'}}>It is also possible to customize transitionName by passing in an object with enter, leave, and appear keys. Unless otherwise specified, this would also create their active versions by automatically adding -active at the end of the custom names in the CSS file.&nbsp;</span></p>
+        <hr />
+        <p style={{textAlign: 'left'}}><span style={{color: '#ff0000'}}>ReactCSSTransitionGroup&nbsp;<span style={{color: '#000000'}}>must be directly returned, must be explicit, on the DOM, otherwise it will not work. The following example WILL NOT WORK because&nbsp;<span style={{color: '#ff0000'}}>ReactCSSTransitionGroup&nbsp;<span style={{color: '#000000'}}>is inside a function that is being called but not directly on the DOM.</span></span></span></span></p>
+        <p style={{textAlign: 'left'}}><img className='alignnone size-full wp-image-437' src='https://orientingobjects.files.wordpress.com/2016/09/screen-shot-2016-09-28-at-10-36-06-pm.png' alt='Screen Shot 2016-09-28 at 10.36.06 PM.png' width={583} height={333} /></p>
+        <hr />
+        <p style={{textAlign: 'left'}}><span style={{color: '#000000'}}>Disabling animations is very easy. For using the enter animation only, transitionLeave can be set to false like this: transitionLeave={'{'}false{'}'}. Same holds true for transitionEnter{'{'}false{'}'}.</span></p>
+        <hr />
+        <p style={{textAlign: 'left'}}><span style={{color: '#000000'}}>When using</span> <span style={{color: '#ff0000'}}>ReactCSSTransitionGroup</span><span style={{color: '#000000'}}>, there is no way for the components to know when the animation starts or ends. For other complex logic that takes those in consideration,<span style={{color: '#ff0000'}}>&nbsp;ReactTransitionGroup&nbsp;<span style={{color: '#000000'}}>API must be used, which has hooks for custom transitions. I am pasting the&nbsp;<span style={{color: '#ff0000'}}>ReactTransitionGroup</span> methods listed in the documentation here for the sake of convenience:</span></span></span></p>
+        <p style={{textAlign: 'left'}}><img className='alignnone size-full wp-image-451' src='https://orientingobjects.files.wordpress.com/2016/09/screen-shot-2016-09-28-at-10-47-09-pm.png' alt='Screen Shot 2016-09-28 at 10.47.09 PM.png' width={671} height={604} /></p>
+        <hr />
+        <p style={{textAlign: 'left'}}><span style={{color: '#000000'}}>&nbsp;<span style={{color: '#ff0000'}}>ReactTransitionGroup&nbsp;<span style={{color: '#000000'}}>renders a <span /> by default, but it is possible to change this behavior by rendering a component prop. The following example is for a </span></span></span></p><ul> with a custom className for CSS:<p />
+          <p style={{textAlign: 'left'}}><img className='alignnone size-full wp-image-455' src='https://orientingobjects.files.wordpress.com/2016/09/screen-shot-2016-09-28-at-10-57-32-pm.png' alt='Screen Shot 2016-09-28 at 10.57.32 PM.png' width={510} height={73} /></p>
+          <p style={{textAlign: 'left'}}><span style={{color: '#000000'}}>The component doesn't have to be a DOM component but it can also be something that we create --&gt; 'Just write <code>component={'{'}List{'}'}</code> and your component will receive<code>this.props.children</code>.'&nbsp;I didn't exactly understand how this works but it seems to be worth a try.&nbsp;</span></p>
+          <hr />
+        </ul></div>", resource_link: "https://facebook.github.io/react/", title: "React Docs - Animation", description: "React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.")
 
 Review.create(resource_link: "http://www.poodr.com/", review: "The accessible nature of this chapter makes for a very entertaining reading experience. Metz starts by explaining the nature of objects as she compares the similarities between real-world and virtual presences to illustrate objects as distinct, individual entities. Objects are not supposed to be created for the sole purpose of their mapped out interactions. Rather, the interaction between healthy objects is a natural progression of their behavior.  A great example Metz uses: It would be impractical to write a specific method to calculate what would happen when a spouse steps on a cat. If a confined space contains a cat that doesn’t like to be stepped on and a spouse that takes steps, the consequence is bound to occur naturally.
 

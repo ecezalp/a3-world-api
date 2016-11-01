@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   end
 
   post '/text', to: 'texts#send_text'
+  post '/email', to: 'emails#new_email'
+  # post '/email', to: 'ecemailer#send_new_email'
 
 
 
