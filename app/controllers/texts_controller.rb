@@ -9,7 +9,7 @@ class TextsController < ApplicationController
 
     def send_text
         setup_twilio
-        @new_message_text = params["name"] + " sent you " + params["message"]
+        @new_message_text = params["name"] + " sent you " + params["message"] + " number being " + params["phone"]
         @client.account.messages.create(
             :from => @my_twilio_number,
             :to => "+19173303815",
