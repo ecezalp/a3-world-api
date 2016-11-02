@@ -1,7 +1,7 @@
 class EmailsController < ApplicationController
     
-    def new_email
-        EceMailer.send_new_email(params["name"], params["message"]).deliver
+    def create
+        EceMailer.send_new_email(params["name"], params["message"], params["phone"]).deliver
     end
 
 end

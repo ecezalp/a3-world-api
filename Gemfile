@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'rack-cors'
 gem 'twilio-ruby'
+gem 'figaro'
 
 
 group :development, :test do
